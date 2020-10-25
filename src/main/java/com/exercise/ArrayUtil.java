@@ -36,8 +36,16 @@ public class ArrayUtil {
      is equal to the sum of the integers to the right of N.
       If there is no index that would make this happen, return -1. */
     public static int findIndexForEvenBothSides(int[] arr) {
-        // your code
+       
+        for (int i = 0; i < arr.length; i++) {
+            Integer leftSumOfArray = Arrays.stream(arr, 0, i).sum();
+            Integer rightSumOfArray = Arrays.stream(arr, i+1, arr.length).sum();
 
+            if (leftSumOfArray.equals(rightSumOfArray)) {
+                return i;
+            }
+        }
+        
         return -1;
       }
 }
