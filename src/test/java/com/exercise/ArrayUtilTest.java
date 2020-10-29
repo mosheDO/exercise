@@ -2,6 +2,7 @@ package com.exercise;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class ArrayUtilTest {
@@ -54,4 +55,12 @@ public class ArrayUtilTest {
        assertEquals(6, ArrayUtil.findIndexForEvenBothSides(new int[] {4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4}));
    }
     //#endregion findIndexForEvenBothSides
+
+   @Test
+    public void testRotrateArrayToLeftByNUmber() {
+        assertArrayEquals(new int[] {5, 1, 2, 3, 4}, ArrayUtil.rotrateArrayToLeftByNUmber(new int[] {1, 2, 3, 4, 5}, 4));
+        assertArrayEquals(new int[] {1, 2, 3, 4, 5}, ArrayUtil.rotrateArrayToLeftByNUmber(new int[] {1, 2, 3, 4, 5}, 0));
+        assertArrayEquals(new int[] {2, 3, 4, 5, 1}, ArrayUtil.rotrateArrayToLeftByNUmber(new int[] {1, 2, 3, 4, 5}, 1));
+        assertArrayEquals(new int[] {}, ArrayUtil.rotrateArrayToLeftByNUmber(new int[] {}, 0));
+    }
 }
